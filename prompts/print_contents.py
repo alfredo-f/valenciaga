@@ -168,7 +168,8 @@ def main(
         write_to_output(
             dedent(r"""
 <section_of_your_task>
-Countdown is very basic. Make it more stylish
+In the folder images, there's img_01.jpg to img_03.jpg.
+Change the website. When pressing on anything, the images cycle 1,2,3,1,2,...
 </section_of_your_task>
                 """)
         )

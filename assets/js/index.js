@@ -8,12 +8,25 @@ document.addEventListener('DOMContentLoaded', function() {
   const minutesEl = document.getElementById('minutes');
   const secondsEl = document.getElementById('seconds');
   const countdownEl = document.getElementById('countdown');
+  const imageEl = document.querySelector('.image-container img'); // Get the image element
 
   // Previous values to check for changes
   let prevDays = -1;
   let prevHours = -1;
   let prevMinutes = -1;
   let prevSeconds = -1;
+
+  // Image cycling functionality
+  let currentImageIndex = 1; // Start with image 1 (img_01.jpg)
+
+  // Add click event listener to the entire document
+  document.addEventListener('click', function() {
+    // Increment the image index, cycling back to 1 after reaching 3
+    currentImageIndex = currentImageIndex % 3 + 1;
+
+    // Update the image source with the new index
+    imageEl.src = `assets/images/img_0\${currentImageIndex}.jpg`;
+  });
 
   // Update the countdown every second
   setInterval(updateCountdown, 1000);
