@@ -42,7 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
       currentImageIndex = currentImageIndex % 3 + 1;
 
       // Update the image source
-      imageEl.src = `assets/images/img_0${currentImageIndex}.jpg`;
+      const srcNew = `assets/images/img_0${currentImageIndex}.jpg`
+      console.log(srcNew);
+      imageEl.src = srcNew;
 
       // Fade in after a small delay to ensure the new image is loaded
       setTimeout(function() {
