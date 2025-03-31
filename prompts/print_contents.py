@@ -1,7 +1,6 @@
 import pathlib
 import platform
 import sys
-from functools import partial
 from textwrap import dedent
 from typing import List
 
@@ -143,16 +142,6 @@ def main(
             dedent(r"""
 <section_of_your_task>
 
-```
-class UsernameFilter(logging.Filter):
-    def filter(self, record):
-        current_user = session.get('user', {}).get('email', 'anonymous')
-        record.username = current_user
-        return True
-```
-
-Instead of that, it must come from cookies. Cookie Name with UserId: mineko-agent-sub-id
-
 </section_of_your_task>
                 """)
         )
@@ -163,9 +152,7 @@ Instead of that, it must come from cookies. Cookie Name with UserId: mineko-agen
 
 
 if __name__ == '__main__':
-    # folder_project = "frontend_metadata"
-    folder_project = "frontend_kendra_project/app_dir"
-    # folder_project = "frontend_navigate"
+    folder_project = "app"
     main(
         folder_project=folder_project,
         exclude_extensions_additional=[
