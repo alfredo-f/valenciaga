@@ -140,7 +140,7 @@ def main(
     include_paths = [
         pathlib.Path(
             rf"{root_project}\index.html"
-        )
+        ),
     ]
     if exclude_extensions_additional:
         _alert_windows(f"Excluding additional extensions: {exclude_extensions_additional}")
@@ -168,8 +168,7 @@ def main(
         write_to_output(
             dedent(r"""
 <section_of_your_task>
-Replace the placeholder `<div class="overlay-text">Hello World3</div>`
-with a countdown of days, hours, minutes, seconds to 2025-08-01T15:20:00 GMT Rome
+Countdown is very basic. Make it more stylish
 </section_of_your_task>
                 """)
         )
@@ -180,7 +179,7 @@ with a countdown of days, hours, minutes, seconds to 2025-08-01T15:20:00 GMT Rom
 
 
 if __name__ == '__main__':
-    folder_project = "app"
+    folder_project = "assets"
     main(
         folder_project=folder_project,
         exclude_extensions_additional=[
