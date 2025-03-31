@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const minutesEl = document.getElementById('minutes');
   const secondsEl = document.getElementById('seconds');
   const countdownEl = document.getElementById('countdown');
-  const imageEl = document.querySelector('.image-container img'); // Get the image element
+  const imageEl = document.querySelector('.image-container img');
 
   // Previous values to check for changes
   let prevDays = -1;
@@ -17,16 +17,39 @@ document.addEventListener('DOMContentLoaded', function() {
   let prevSeconds = -1;
 
   // Image cycling functionality
-  let currentImageIndex = 1; // Start with image 1 (img_01.jpg)
+  let currentImageIndex = 1;
 
-  // Add click event listener to the entire document
-  imageEl.addEventListener('click', function() {
-    // Increment the image index, cycling back to 1 after reaching 3
-    currentImageIndex = currentImageIndex % 3 + 1;
+  // Preload all images for smoother transitions
+  function preloadImages() {
+    for (let i = 1; i <= 3; i++) {
+      const img = new Image();
+      img.src = `assets/images/img_0${i}.jpg`;
+    }
+  }
+  preloadImages();
 
-    // Update the image source with the new index
-    imageEl.src = `assets/images/img_0\${currentImageIndex}.jpg`;
-  });
+  // Add CSS transition to the image
+  imageEl.style.transition = 'opacity 0.5s ease-in-out';
+  imageEl.style.opacity = '1';
+
+  // Cycle images every 2 seconds
+  setInterval(function() {
+    // Fade out
+    imageEl.style.opacity = '0';
+
+    setTimeout(function() {
+      // Increment the image index, cycling back to 1 after reaching 3
+      currentImageIndex = currentImageIndex % 3 + 1;
+
+      // Update the image source
+      imageEl.src = `assets/images/img_0${currentImageIndex}.jpg`;
+
+      // Fade in after a small delay to ensure the new image is loaded
+      setTimeout(function() {
+        imageEl.style.opacity = '1';
+      }, 50);
+    }, 500); // This matches the fade-out transition duration
+  }, 2000); // Cycle every 2 seconds
 
   // Update the countdown every second
   setInterval(updateCountdown, 1000);
