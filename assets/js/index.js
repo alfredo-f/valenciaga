@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let currentImageIndex = 1; // Start with image 1 (img_01.jpg)
 
   // Add click event listener to the entire document
-  document.addEventListener('click', function() {
+  imageEl.addEventListener('click', function() {
     // Increment the image index, cycling back to 1 after reaching 3
     currentImageIndex = currentImageIndex % 3 + 1;
 
