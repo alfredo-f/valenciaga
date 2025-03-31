@@ -168,7 +168,7 @@ def main(
         write_to_output(
             dedent(r"""
 <section_of_your_task>
-Make the entire thing centered horizontally
+Make this more responsive, meaning the thing must be centered horizontally and vertically
 </section_of_your_task>
                 """)
         )

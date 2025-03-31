@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .image-container {
             position: relative;
             text-align: center;
-            width: 360px;
-            margin: 0 auto; /* Added this line to center the container horizontally */
+            max-width: 600px;
+            width: 90%;
+            margin: 0 auto;
         }
 
         .overlay-text {
@@ -20,6 +33,14 @@
         .image-container img {
             max-width: 100%;
             height: auto;
+            display: block;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .overlay-text {
+                top: 10%; /* Use percentage for better responsiveness */
+            }
         }
     </style>
 </head>
