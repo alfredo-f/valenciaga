@@ -5,13 +5,21 @@
         .image-container {
             position: relative;
             text-align: center;
+            width: 360px;
+            margin: 0 auto; /* Added this line to center the container horizontally */
         }
 
         .overlay-text {
             position: absolute;
             top: 50px;
-            width: 100%;
             text-align: center;
+            width: 100%;
+            left: 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>

@@ -168,7 +168,7 @@ def main(
         write_to_output(
             dedent(r"""
 <section_of_your_task>
-I want the image to be a centered thing, where the text is placed on top of it, 50px from top
+Make the entire thing centered horizontally
 </section_of_your_task>
                 """)
         )
