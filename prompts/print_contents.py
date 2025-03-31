@@ -168,7 +168,8 @@ def main(
         write_to_output(
             dedent(r"""
 <section_of_your_task>
-Make this more responsive, meaning the thing must be centered horizontally and vertically
+Replace the placeholder `<div class="overlay-text">Hello World3</div>`
+with a countdown of days, hours, minutes, seconds to 2025-08-01T15:20:00 GMT Rome
 </section_of_your_task>
                 """)
         )
