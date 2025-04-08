@@ -168,7 +168,7 @@ def main(
         write_to_output(
             dedent(r"""
 <section_of_your_task>
-The image cycling functionality is not working
+I want a new page. This website should be mobile optimized, because when I scroll from the current homepage, I want the new page to be displayed with a cool scroll effect
 </section_of_your_task>
                 """)
         )

@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const secondsEl = document.getElementById('seconds');
   const countdownEl = document.getElementById('countdown');
   const imageEl = document.querySelector('.image-container img');
+  const scrollContainer = document.querySelector('.scroll-container');
+  const contentContainer = document.querySelector('.content-container');
+  const scrollIndicator = document.querySelector('.scroll-indicator');
 
   // Previous values to check for changes
   let prevDays = -1;
@@ -43,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Update the image source
       const srcNew = `assets/images/img_0${currentImageIndex}.jpg`
-      console.log(srcNew);
       imageEl.src = srcNew;
 
       // Fade in after a small delay to ensure the new image is loaded
@@ -52,6 +54,27 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 50);
     }, 500); // This matches the fade-out transition duration
   }, 2000); // Cycle every 2 seconds
+
+  // Scroll effects
+  scrollContainer.addEventListener('scroll', function() {
+    const scrollPosition = scrollContainer.scrollTop;
+    const windowHeight = window.innerHeight;
+
+    // Activate second page content when scrolled to it
+    if (scrollPosition > windowHeight / 2) {
+      contentContainer.classList.add('active');
+    } else {
+      contentContainer.classList.remove('active');
+    }
+  });
+
+  // Handle scroll indicator click - smooth scroll to second page
+  scrollIndicator.addEventListener('click', function() {
+    scrollContainer.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  });
 
   // Update the countdown every second
   setInterval(updateCountdown, 1000);

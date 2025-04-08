@@ -10,30 +10,65 @@
     <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
-<div class="image-container">
-    <div class="overlay-text">
-        <div class="countdown-container" id="countdown">
-            <div class="countdown-box">
-                <div class="countdown-number" id="days"></div>
-                <div class="countdown-label">Días</div>
+    <div class="scroll-container">
+        <section class="page page-one">
+            <div class="image-container">
+                <div class="overlay-text">
+                    <div class="countdown-container" id="countdown">
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="days"></div>
+                            <div class="countdown-label">Días</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="hours"></div>
+                            <div class="countdown-label">Horas</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="minutes"></div>
+                            <div class="countdown-label">Minutos</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="seconds"></div>
+                            <div class="countdown-label">Segundos</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="assets/images/img_01.jpg" alt="Image">
             </div>
-            <div class="countdown-box">
-                <div class="countdown-number" id="hours"></div>
-                <div class="countdown-label">Horas</div>
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <div class="arrow-down"></div>
             </div>
-            <div class="countdown-box">
-                <div class="countdown-number" id="minutes"></div>
-                <div class="countdown-label">Minutos</div>
-            </div>
-            <div class="countdown-box">
-                <div class="countdown-number" id="seconds"></div>
-                <div class="countdown-label">Segundos</div>
-            </div>
-        </div>
-    </div>
-    <img src="assets/images/img_01.jpg" alt="Image">
-</div>
+        </section>
 
-<script src="assets/js/index.js"></script>
+        <section class="page page-two">
+            <div class="content-container">
+                <h1>Event Details</h1>
+                <div class="detail-card">
+                    <div class="icon location-icon"></div>
+                    <h2>Location</h2>
+                    <p>123 Event Plaza, Ciudad de México</p>
+                </div>
+
+                <div class="detail-card">
+                    <div class="icon time-icon"></div>
+                    <h2>Time</h2>
+                    <p>August 1, 2025 • 15:20</p>
+                </div>
+
+                <div class="detail-card">
+                    <div class="icon info-icon"></div>
+                    <h2>Information</h2>
+                    <p>Join us for this special event. Don't miss the opportunity!</p>
+                </div>
+
+                <div class="cta-button">
+                    <a href="#" class="button">REGISTER NOW</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="assets/js/index.js"></script>
 </body>
 </html>
